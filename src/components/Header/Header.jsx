@@ -48,7 +48,7 @@ function Header() {
               <Logo width="70px" />
             </Link>
           </div>
-          <div className="ml-auto absolute right-4  md:hidden">
+          <div className="ml-auto z-50 absolute right-4  md:hidden">
               <MenuButton navItems={navItems} navigate={naviagte} authStatus={authStatus} />
           </div>
           <ul className="flex invisible md:visible ml-auto">

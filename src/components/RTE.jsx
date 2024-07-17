@@ -31,7 +31,7 @@ function RTE({name, control, label, defaultValue=""}) {
         setValue(content);
       };
   return (
-    <div className='w-full'>
+    <div className='w-full bg-background'>
         {label && <label className='inline-block font-bold mb-1 pl-1'>{label}</label>}
 
         <Controller name={name || "content"} control={control} 

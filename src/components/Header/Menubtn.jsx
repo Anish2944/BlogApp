@@ -21,7 +21,7 @@ const MenuButton = ({ navItems, navigate, authStatus }) => {
       </button>
       {menuOpen && (
         <div className="absolute right-0 mt-2 bg-background rounded shadow-lg">
-          <ul className="py-2">
+          <ul className="py-2 ">
             {navItems.map((item) => (
                 item.active ? (
               <li key={item.name}>
