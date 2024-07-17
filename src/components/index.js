@@ -12,7 +12,6 @@ import PostForm from './post-form/PostForm.jsx'
 import PostCard from './PostCard.jsx'
 import Protected from './Protected.jsx'
 import Signup from './Signup.jsx'
-import Delete from './Delete.jsx';
 export {
     Header,
     Footer,
@@ -28,5 +27,4 @@ export {
     PostCard,
     Protected,
     Signup,
-    Delete
 }
