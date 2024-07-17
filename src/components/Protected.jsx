@@ -18,7 +18,9 @@ function Protected({children, authentication =true}) {
     },[authStatus, navigate, authentication])
 
 
-  return loader ? <h1>Loading...</h1> : <>{children}</>;
+  return loader ? <div className="flex justify-center items-center">
+  <div className="loader"></div>
+</div> : <>{children}</>;
 }
 
 export default Protected

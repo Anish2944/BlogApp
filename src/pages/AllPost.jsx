@@ -3,6 +3,7 @@ import service from '../appwrite/config'
 import { PostCard, Container } from '../components'
 
 
+
 const AllPost = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);

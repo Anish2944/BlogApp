@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import service from "../appwrite/config";
 import { Container, PostCard } from "../components";
 
@@ -7,27 +7,37 @@ import { Container, PostCard } from "../components";
 function MyPost() {
   const [mypost, setMyPost] = useState([]);
   const [loading, setLoading] = useState(true);
-//   const userData = useSelector((state) => state.auth.userData);
+  const userId = useSelector((state) => state.auth.userData?.$id);
 
   useEffect(() => {
     const fetchPosts = async () => {
-        try {
-            const response = await service.fetchUserPosts([]);
-            if (response && response.documents) {
-                setMyPost(response.documents);
-            } else {
-                setMyPost([]); // Ensure posts are set to an empty array if no data is returned
-            }
-        } catch (error) {
-            console.error('Error fetching posts:', error);
-            setPosts([]); // Ensure posts are set to an empty array on error
-        } finally {
-            setLoading(false); // Set loading to false regardless of success or failure
+      if (!userId) {
+        console.log('User ID not available');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        console.log('Fetching user posts...');
+        const posts = await service.fetchUserPosts(userId);
+        console.log('Response received:', posts);
+        if (posts.length > 0) {
+          console.log('Documents found:', posts);
+          setMyPost(posts);
+        } else {
+          console.log('No documents found');
+          setMyPost([]); // Ensure posts are set to an empty array if no data is returned
         }
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        setMyPost([]); // Ensure posts are set to an empty array on error
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or failure
+      }
     };
 
     fetchPosts();
-}, []);
+  }, [userId]);
 
   return (
     <div className="py-8 w-full">
