@@ -31,7 +31,7 @@ function App() {
     <div className='min-h-screen flex flex-wrap content-between bg-secondary'>
       <div className='w-full block'>
         <Header/>
-        <main>
+        <main className='min-h-screen' >
           <Outlet/>
         </main>
         <Footer/>

@@ -1,25 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import service from "../appwrite/config";
 import { Container, PostCard } from "../components";
-import { Query } from "appwrite";
+
 
 function MyPost() {
   const [mypost, setMyPost] = useState([]);
   const [loading, setLoading] = useState(true);
-  const userData = useSelector((state) => state.auth.userData);
+//   const userData = useSelector((state) => state.auth.userData);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      if (userData) {
-        const userPosts = await service.fetchUserPosts(userData.$id);
-        // const userPosts = await service.getPosts([Query.equal('userid',userData.$id)]);
-        setLoading(false);
-        setMyPost(userPosts);
-      }
+        try {
+            const response = await service.fetchUserPosts([]);
+            if (response && response.documents) {
+                setMyPost(response.documents);
+            } else {
+                setMyPost([]); // Ensure posts are set to an empty array if no data is returned
+            }
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+            setPosts([]); // Ensure posts are set to an empty array on error
+        } finally {
+            setLoading(false); // Set loading to false regardless of success or failure
+        }
     };
+
     fetchPosts();
-  }, [userData]);
+}, []);
 
   return (
     <div className="py-8 w-full">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Logo, LogOutBtn } from "../index";
+import { Container, Logo, LogOutBtn,MenuButton } from "../index";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -48,7 +48,10 @@ function Header() {
               <Logo width="70px" />
             </Link>
           </div>
-          <ul className="flex ml-auto">
+          <div className="ml-auto absolute right-4  md:hidden">
+              <MenuButton navItems={navItems} navigate={naviagte} authStatus={authStatus} />
+          </div>
+          <ul className="flex invisible md:visible ml-auto">
             {navItems.map((item) =>
               item.active ? (
                 <li key={item.name}>
