@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import {Editor} from '@tinymce/tinymce-react'
+// import {Editor} from '@tinymce/tinymce-react'
 import {Controller} from 'react-hook-form'
-import conf from '../conf/conf'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 const modules = {
@@ -26,16 +25,17 @@ const modules = {
 
 function RTE({name, control, label, defaultValue=""}) {
 
-    const [value,setValue] = useState('');
+    const [value,setValue] = useState(defaultValue);
     const handleChange = (content, delta, source, editor) => {
         setValue(content);
+        control.setValue(name,content)
       };
   return (
     <div className='w-full bg-background'>
         {label && <label className='inline-block font-bold mb-1 pl-1'>{label}</label>}
 
         <Controller name={name || "content"} control={control} 
-        render={({field: {onChange}}) => (
+        render={({field}) => (
             // <Editor 
             //     initialValue={defaultValue}
             //     apiKey={conf.apikeytinymce}
@@ -56,12 +56,12 @@ function RTE({name, control, label, defaultValue=""}) {
             //     onEditorChange={onChange}
             // />
             <ReactQuill
-        value={value}
-        onChange={handleChange}
-        modules={modules}
-        formats={formats}
-        theme="snow"
-      />
+              value={field.value}
+              onChange={field.onChange}
+              modules={modules}
+              formats={formats}
+              theme="snow"
+            />
             
         )} />
     </div>

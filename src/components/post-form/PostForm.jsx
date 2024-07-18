@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import {Button,Input,Select,RTE} from '../index'
 import service from '../../appwrite/config'
@@ -19,6 +19,7 @@ function PostForm({post}) {
     const navigate = useNavigate();
     const userData = useSelector(state => state.auth.userData);
 
+    const [error,setError] = useState('');
     // const submit = async (data) => {
     //     if (post) {
     //         const file = data.image[0] ? await service.uploadFile(data.image[0]) : null
@@ -58,6 +59,7 @@ function PostForm({post}) {
     
         if (data.content.length > 2000) {
             console.error("Content length exceeds the maximum allowed length.");
+            setError('Content length exceeds the maximum allowed length.')
             return;
         }
     
@@ -95,6 +97,7 @@ function PostForm({post}) {
             }
         } catch (error) {
             console.error("Error while submitting the post:", error);
+            setError(error)
         }
     };
     
@@ -153,6 +156,8 @@ function PostForm({post}) {
                 className='w-full'>
                     {post ? "Update" : "Submit"} 
                 </Button>
+                {error && <p className='text-red-600 font-bold mt-8 text-center'>{error.mesaage}</p>}
+
             </div>
 
             </form>

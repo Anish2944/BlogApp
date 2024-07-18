@@ -52,9 +52,9 @@ function MyPost() {
         ) : (
           <>
             {mypost.length > 0 ? (
-              <div className="flex flex-wrap">
+              <div className="grid grid-cols-1 px-8 md:p-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {mypost.map((post) => (
-                  <div key={post.$id} className="p-2 w-1/4">
+                  <div key={post.$id} className="p-2">
                     <PostCard {...post} />
                   </div>
                 ))}

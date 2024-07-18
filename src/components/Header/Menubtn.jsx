@@ -14,7 +14,7 @@ const MenuButton = ({ navItems, navigate, authStatus }) => {
   return (
     <div className="relative duration-200">
       <button
-        className="block px-3 py-2 text-text focus:outline-none"
+        className="block hover:animate-spin px-3 py-2 text-text focus:outline-none"
         onClick={toggleMenu}
       >
         <FontAwesomeIcon icon={faBars} size='xl' />

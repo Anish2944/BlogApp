@@ -41,7 +41,7 @@ const AllPost = () => {
             ))}
           </div>
         ) : (
-          <h1>No Posts Found</h1>
+          <h1 className=" text-4xl md:text-4xl md:mx-40 mb-11 font-bold p-8 text-gray-700 >No Posts Found"></h1>
         )}
       </>
     )}
