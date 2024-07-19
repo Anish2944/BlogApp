@@ -37,10 +37,10 @@ function Signup() {
                     <Logo width='100%' />
                 </span>
             </div>
-            <h2 className='text-center text-2xl font-bold leading-tight'>
+            <h2 className='text-center text-text text-2xl font-bold leading-tight'>
                 Sign up to create account
             </h2>
-            <p className='mt-2 text-center text-base text-black/60'>
+            <p className='mt-2 text-center text-base text-text2'>
                 Already have an account?&nbsp;
                 <Link to="/login"
                     className='font-medium text-start transition-all duration-200 hover:underline'>
@@ -49,7 +49,7 @@ function Signup() {
             </p>
             {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
             <form onSubmit={handleSubmit(create)}>
-            <div className='space-y-5'>
+            <div className='space-y-5 text-text'>
                 <Input label = "Name: " placeholder="Enter your name"
                  {...register("name",{ required: true})} type = "text" />
                  <Input 
