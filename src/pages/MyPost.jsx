@@ -46,7 +46,7 @@ function MyPost() {
           My Posts
         </h2>
         {loading ? (
-          <div className="flex justify-center items-center">
+          <div className="flex mt-40 justify-center items-center">
             <div className="loader"></div>
           </div>
         ) : (

@@ -31,8 +31,8 @@ function RTE({name, control, label, defaultValue=""}) {
         control.setValue(name,content)
       };
   return (
-    <div className='w-full bg-background'>
-        {label && <label className='inline-block font-bold mb-1 pl-1'>{label}</label>}
+    <div className='w-full text-text2 bg-background'>
+        {label && <label className='inline-block text-text font-bold mb-1 pl-1'>{label}</label>}
 
         <Controller name={name || "content"} control={control} 
         render={({field}) => (

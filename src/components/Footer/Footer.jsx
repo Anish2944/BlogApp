@@ -27,7 +27,7 @@ function Footer() {
                             <ul>
                                 <li className="mb-4">
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Features
@@ -35,7 +35,7 @@ function Footer() {
                                 </li>
                                 <li className="mb-4">
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Pricing
@@ -43,7 +43,7 @@ function Footer() {
                                 </li>
                                 <li className="mb-4">
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Affiliate Program
@@ -51,7 +51,7 @@ function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Press Kit
@@ -68,7 +68,7 @@ function Footer() {
                             <ul>
                                 <li className="mb-4">
                                     <Link
-                                        className="text-base font-medium text-text hover:text-gray-100"
+                                        className="text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Account
@@ -76,7 +76,7 @@ function Footer() {
                                 </li>
                                 <li className="mb-4">
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Help
@@ -84,7 +84,7 @@ function Footer() {
                                 </li>
                                 <li className="mb-4">
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Contact Us
@@ -92,7 +92,7 @@ function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Customer Support
@@ -109,7 +109,7 @@ function Footer() {
                             <ul>
                                 <li className="mb-4">
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Terms &amp; Conditions
@@ -117,7 +117,7 @@ function Footer() {
                                 </li>
                                 <li className="mb-4">
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Privacy Policy
@@ -125,7 +125,7 @@ function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        className=" text-base font-medium text-text hover:text-gray-100"
+                                        className=" text-base font-medium text-text2 hover:text-gray-100"
                                         to="/"
                                     >
                                         Licensing
@@ -134,7 +134,7 @@ function Footer() {
                             </ul>
                         </div>
                         <div className='mr-16 md:invisible visible'>
-                                <p className="text-sm text-text">
+                                <p className="text-sm text-text2">
                                     &copy; Copyright 2023. All Rights Reserved by DevUI.
                                 </p>
                             </div>

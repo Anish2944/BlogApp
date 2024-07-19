@@ -18,7 +18,7 @@ function Protected({children, authentication =true}) {
     },[authStatus, navigate, authentication])
 
 
-  return loader ? <div className="flex justify-center items-center">
+  return loader ? <div className="flex mt-40 justify-center items-center">
   <div className="loader"></div>
 </div> : <>{children}</>;
 }

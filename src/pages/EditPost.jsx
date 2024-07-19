@@ -30,7 +30,7 @@ function EditPost() {
             <PostForm post={post}/>
         </Container>
     </div>
-  ) : (<div className="flex justify-center items-center">
+  ) : (<div className="flex mt-40 justify-center items-center">
   <div className="loader"></div>
 </div>)
 }

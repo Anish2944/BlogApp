@@ -7,18 +7,9 @@ import { faArrowTurnUp} from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
 function Home() {
-
-    // const [posts,setPosts] = useState([]);
-
-    // useEffect(() => {
-      
-    //     service.getPosts().then((posts) => {
-    //         if (posts) {
-    //             setPosts(posts.documents)
-    //         }
-    //     })
-    // }, [])
-    const isAuth = useSelector(state => state.auth.status)
+    const isAuth = useSelector(state => state.auth.status);
+    const theme = useSelector(state => state.theme.theme);
+    console.log('Current theme:', theme);
 
     // if (posts.length === 0) {
         return (
@@ -26,10 +17,10 @@ function Home() {
                 <Container>
                     <div className='flex flex-wrap'>
                         <div className='md:p-8 p-4 relative mx-10 md:mr-10 w-full'>
-                            <h1 className=' shadow-2xl shadow-text  text-4xl md:text-6xl md:mx-40 mb-11 font-bold p-8 text-text'>
+                            <h1 className={`shadow-2xl ${theme === 'purple' ? 'text-purple-800' : ''} shadow-shadowText  text-4xl md:text-6xl md:mx-40 mb-11 font-bold p-8 text-text2`}>
                             Express your views, ideas, story and Knowledge.
                             </h1>
-                            <p className=' shadow-text shadow-2xl bg-accent p-4 md:p-8 md:mx-40 text-lg md:text-2xl'>BlogApp is a home for human stories and ideas. Here, anyone can share insightful perspectives, useful knowledge, and life wisdom with the world—without building a mailing list or a following first. The internet is noisy and chaotic; BlogApp is quiet yet full of insight. It’s simple, beautiful, collaborative, and helps you find the right audience for whatever you have to say.
+                            <p className={`shadow-shadowText shadow-2xl bg-accent p-4 md:p-8 md:mx-40 text-lg md:text-2xl`}>BlogApp is a home for human stories and ideas. Here, anyone can share insightful perspectives, useful knowledge, and life wisdom with the world—without building a mailing list or a following first. The internet is noisy and chaotic; BlogApp is quiet yet full of insight. It’s simple, beautiful, collaborative, and helps you find the right audience for whatever you have to say.
 
 
 We believe that what you read and write matters. Words can divide or empower us, inspire or discourage us. In a world where the most sensational and surface-level stories often win, we’re building a system that rewards depth, nuance, and time well spent. A space for thoughtful conversation more than drive-by takes, and substance over packaging.</p>
@@ -38,7 +29,7 @@ We believe that what you read and write matters. Words can divide or empower us,
                                 <FontAwesomeIcon icon={faArrowTurnUp} style={{color: '#4a148c'}} size='2xl' flip='horizontal' />
                             </div>
                             <Link to='/login' > 
-                                <div className='absolute xl:visible invisible bg-accent p-2 hover:shadow-2xl hover:shadow-background rounded-full top-24 right-4 mr-8 font-bold'>
+                                <div className='absolute xl:visible invisible bg-accent p-2 hover:shadow-2xl hover:shadow-white rounded-full top-24 right-4 mr-8 font-bold'>
                                     Log in to read Blogs
                                 </div>
                             </Link>

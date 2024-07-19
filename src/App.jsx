@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import './App.css'
 import authService from './appwrite/auth'
 import {login, logout} from './store/authSlice'
@@ -11,6 +11,9 @@ function App() {
   
   const [loading,setLoading] = useState(true);
   const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme.theme);
+
+  
 
   useEffect(() => {
     authService.getCurrentUser()
@@ -28,7 +31,7 @@ function App() {
 
 
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap content-between bg-secondary'>
+    <div className={`min-h-screen ${theme === 'purple' ? 'purple-theme' : 'dark-theme'} flex flex-wrap content-between bg-secondary`}>
       <div className='w-full block'>
         <Header/>
         <main className='min-h-screen' >

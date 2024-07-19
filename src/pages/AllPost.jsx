@@ -27,7 +27,7 @@ const AllPost = () => {
   <Container>
     <h2 className="text-3xl underline font-bold text-text mb-4">All Posts</h2>
     {loading ? (
-      <div className="flex justify-center items-center">
+      <div className="flex mt-40 justify-center items-center">
         <div className="loader"></div>
       </div>
     ) : (

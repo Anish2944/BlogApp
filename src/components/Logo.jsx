@@ -5,7 +5,7 @@ import {faBlog} from '@fortawesome/free-solid-svg-icons'
 function Logo({width = '100px'}) {
   return (
     <div className={`${width} hover:animate-bounce`}>
-      <FontAwesomeIcon size='2xl' style={{color: '#4a148c'}} icon={faBlog} />
+      <FontAwesomeIcon size='2xl' style={{color: 'var(--text-primary-color)'}} icon={faBlog} />
     </div>
   )
 }

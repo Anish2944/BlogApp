@@ -53,7 +53,7 @@ function Post() {
                  {isAuth && (
                     <div className='absolute right-12 top-6'>
                         <Link to={`edit-post/${post.$id}`}>
-                            <Button bgColor='bg-green-500' className='mr-3'>Edit</Button>
+                            <Button bgColor='bg-primary' className='mr-3'>Edit</Button>
                         </Link>
                             <Button bgColor='bg-red-500' onClick={() => setBoolean(true)}>Delete</Button>
                     </div>
@@ -72,7 +72,7 @@ function Post() {
         <div className={`mx-auto w-full max-w-lg bg-background rounded-xl 
                     p-10 border border-black/10`}>
             
-            <h2 className='text-center pb-10  text-2xl font-bold leading-tight'>
+            <h2 className='text-center pb-10 text-text  text-2xl font-bold leading-tight'>
                 Are you sure to delete this Post?
             </h2>
                 <div className=' flex pt-6 flex-col justify-between space-y-5'>
@@ -84,7 +84,7 @@ function Post() {
         </div>
     </>
   ) : (<>
-    <div className="flex justify-center items-center">
+    <div className="flex mt-40 justify-center items-center">
         <div className="loader"></div>
     </div>
 </>);

@@ -17,6 +17,8 @@ function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector(state => state.auth.userData);
+    const theme = useSelector(state => state.theme.theme)
+    const [loader,setLoader] = useState(false);
 
     const [error, setError] = useState('');
 
@@ -25,6 +27,7 @@ function PostForm({ post }) {
     // };
 
     const submit = async (data) => {
+        setLoader(true)
         if (!userData || !userData.$id) {
             console.error("User data is not available.");
             return;
@@ -54,6 +57,7 @@ function PostForm({ post }) {
                     ...data,
                     Image: file ? file.$id : post.Image,
                 });
+                setLoader(false)
             } else {
                 if (!data.image || !data.image.length) {
                     setError("Image is required for the first post.");
@@ -71,13 +75,14 @@ function PostForm({ post }) {
                     });
                 }
             }
-
+            setLoader(false)
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
             }
         } catch (error) {
             console.error("Error while submitting the post:", error);
             setError(error.message);
+            setLoader(false);
         }
     };
 
@@ -107,8 +112,8 @@ function PostForm({ post }) {
     }, [watch, slugTransform, setValue]);
 
     return (
-        <form onSubmit={handleSubmit(submit)} className='flex flex-col md:flex-row flex-wrap'>
-            <div className='md:w-2/3 px-2'>
+        <form onSubmit={handleSubmit(submit)} className='flex relative flex-col md:flex-row flex-wrap'>
+            <div className='md:w-2/3 text-text px-2'>
                 <Input label="Title: " placeholder="Title" className='mb-4'
                     {...register("title", { required: true })} />
 
@@ -120,7 +125,7 @@ function PostForm({ post }) {
 
                 <RTE label="Content: " name="content" control={control} defaultValue={getValues("content")} />
             </div>
-            <div className='md:w-1/3 px-2'>
+            <div className='md:w-1/3 text-text px-2'>
                 <Input label="Image: " className='mb-4' type="file" accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !post })} />
                 {post && (
@@ -129,7 +134,7 @@ function PostForm({ post }) {
                     </div>
                 )}
                 <Select options={["active", "inactive"]} label="Status" className='mb-4' {...register("status", { required: true })} />
-                <Button type='submit' bgColor={post ? "bg-green-500" : "bg-purple-600"} className='w-full'>
+                <Button type='submit' bgColor={theme === 'purple' ? 'bg-purple-600' : 'bg-text2'} className='w-full'>
                     {post ? "Update" : "Submit"}
                 </Button>
                 {error && <p className='text-red-600 font-bold mt-8 text-center'>{error}</p>}
@@ -137,7 +142,11 @@ function PostForm({ post }) {
                 {errors.title && <p className='text-red-600 font-bold mt-8 text-center'>Title is required.</p>}
                 {errors.content && <p className='text-red-600 font-bold mt-8 text-center'>Content is required.</p>}
             </div>
+            {loader &&  <div className="flex mt-40 absolute ml-96  z-30 justify-center items-center">
+                            <div className="loader "></div>
+                        </div>}
         </form>
+        
     );
 }
 

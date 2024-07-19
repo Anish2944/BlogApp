@@ -2,14 +2,20 @@
 
 import React, { useState } from 'react';
 import LogOutBtn from './LogOutBtn';
+import { useDispatch } from "react-redux";
+import {toggleTheme} from '../../store/themeSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 const MenuButton = ({ navItems, navigate, authStatus }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const toggelHandle = () => {
+    dispatch(toggleTheme());
+  }
 
   return (
     <div className="relative duration-200">
@@ -30,12 +36,14 @@ const MenuButton = ({ navItems, navigate, authStatus }) => {
                     toggleMenu();
                     navigate(item.slug);
                   }}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200 w-full text-left"
+                  className="block px-4 py-2 text-text2 hover:bg-gray-300 w-full text-left"
                 >
                   {item.name}
                 </button>
               </li>) : null
             ))}
+             <button onClick={toggelHandle} className="inline-block hover:bg-gray-300 text-text2 text-left px-6 py-2 duration-200" >Theme</button>
+
             {authStatus && (
               <li>
                 <LogOutBtn />
