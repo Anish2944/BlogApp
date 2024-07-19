@@ -21,6 +21,7 @@ export default {
         text2: 'var(--text-secondary-color)',
         shadowText: 'var(--shadow-text-color)',
         logoColor: 'var(--logo-color)',
+        HomeHead: 'var(--Home-Heading)',
       },
     },
   },
