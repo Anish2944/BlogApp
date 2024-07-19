@@ -26,7 +26,7 @@ function Home() {
 We believe that what you read and write matters. Words can divide or empower us, inspire or discourage us. In a world where the most sensational and surface-level stories often win, we’re building a system that rewards depth, nuance, and time well spent. A space for thoughtful conversation more than drive-by takes, and substance over packaging.</p>
                         </div>
                             { !isAuth && ( <><div className='-rotate-12 xl:visible invisible absolute top-14 text-3xl right-12 mr-40'>
-                                <FontAwesomeIcon icon={faArrowTurnUp} style={{color: '#4a148c'}} size='2xl' flip='horizontal' />
+                                <FontAwesomeIcon icon={faArrowTurnUp} style={{color: '#4a148c'}} size='2xl ' flip='horizontal' />
                             </div>
                             <Link to='/login' > 
                                 <div className='absolute xl:visible invisible bg-accent p-2 hover:shadow-2xl hover:shadow-white rounded-full top-24 right-4 mr-8 font-bold'>

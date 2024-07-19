@@ -10,7 +10,7 @@ function Footer() {
                         <div className="flex h-full flex-col justify-between">
                             <div className="mb-2 ml-7 inline-flex items-center">
                                 <Logo width="100px" />
-                                <h1 className='ml-8 text-text font-bold text-4xl'>Blog App</h1>
+                                <h1 className='ml-8 text-logoColor font-bold text-4xl'>Blog App</h1>
                             </div>
                             <div className='mr-16 md:visible invisible'>
                                 <p className="text-sm text-text">

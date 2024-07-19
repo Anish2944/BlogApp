@@ -12,6 +12,7 @@
   --background-color: #f3e8ff;
   --card-color: #b794f4;
   --shadow-text-color: rgba(107, 4, 111, 0.558);
+  --logo-color: #820792df;
 }
 
 .dark-theme {
@@ -23,6 +24,7 @@
   --text-primary-color: #ffffff;
   --text-secondary-color: #8b949e;
   --shadow-text-color: #ffffff99;
+  --logo-color: #ffffff;
 }
 
 body {

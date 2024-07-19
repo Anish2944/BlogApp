@@ -20,6 +20,7 @@ export default {
         text: 'var(--text-primary-color)',
         text2: 'var(--text-secondary-color)',
         shadowText: 'var(--shadow-text-color)',
+        logoColor: 'var(--logo-color)',
       },
     },
   },
