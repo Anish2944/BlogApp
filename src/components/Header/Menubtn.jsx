@@ -20,13 +20,13 @@ const MenuButton = ({ navItems, navigate, authStatus }) => {
   return (
     <div className="relative duration-200">
       <button 
-        className={`${menuOpen ? '-rotate-90 transition' : ''}block px-3 py-2 text-text focus:outline-none`}
+        className={`${menuOpen ? '-rotate-90 transition-all duration-1000' : ''}block px-3 py-2 text-text focus:outline-none`}
         onClick={toggleMenu}
       >
         <FontAwesomeIcon icon={faBars} size='xl' />
       </button>
       {menuOpen && (
-        <div className="absolute right-0 mt-2 bg-background rounded shadow-lg">
+        <div className="absolute animate-slideUp right-0 mt-2 bg-background rounded shadow-lg">
           <ul className="py-2 ">
             {navItems.map((item) => (
                 item.active ? (
