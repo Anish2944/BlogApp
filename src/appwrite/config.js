@@ -44,9 +44,9 @@ export class Service{
             // if (!this.isValidDocumentId(slug)) {
             //     throw new Error('Invalid `slug` format: must be 1-36 chars long and contain only a-z, A-Z, 0-9, period, hyphen, and underscore. Cannot start with a special character.');
             // }
-            if (typeof content !== 'string' || content.length > 400) {
-                throw new Error('Content must be a valid string and no longer than 400 chars');
-            }
+            // if (typeof content !== 'string' || content.length > 400) {
+            //     throw new Error('Content must be a valid string and no longer than 400 chars');
+            // }
 
             return await this.databases.createDocument(
                 conf.appWriteDatabaseId,
