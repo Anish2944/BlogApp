@@ -44,7 +44,7 @@ function Post() {
  
   return post ? (
     <>
-    <div className={`py-8 ${Boolean ? 'blur' : ''}`}>
+    <div className={`py-8 animate-slideIn ${Boolean ? 'blur' : ''}`}>
         <Container>
             <div className='w-200 h-96 flex justify-center mb-4 relative border box-border rounded-xl p-2'>
                  <img src={service.getFilePreview(post.Image)} alt={post.title}

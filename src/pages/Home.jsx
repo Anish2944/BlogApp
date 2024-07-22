@@ -13,7 +13,7 @@ function Home() {
 
     // if (posts.length === 0) {
         return (
-            <div className='w-full py-8 mt-4'>
+            <div className='w-full animate-slideIn py-8 mt-4'>
                 <Container>
                     <div className='flex flex-wrap'>
                         <div className='md:p-8 p-4 relative mx-10 md:mr-10 w-full'>

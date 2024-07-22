@@ -40,7 +40,7 @@ function MyPost() {
   }, [userId]);
 
   return (
-    <div className="py-8 w-full">
+    <div className="py-8 animate-slideIn w-full">
       <Container>
         <h2 className="text-3xl underline font-bold text-text mb-4">
           My Posts

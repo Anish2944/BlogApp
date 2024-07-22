@@ -5,7 +5,7 @@ import { Container, PostForm } from '../components'
 function AddPost() {
 
   return (
-    <div className='py-8'>
+    <div className='py-8 animate-slideIn'>
         <Container>
             <PostForm />
         </Container>
